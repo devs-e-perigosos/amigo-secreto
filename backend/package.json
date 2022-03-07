@@ -4,6 +4,7 @@
   "description": "Aplicativo de sorteio do jogo Amigo Secreto",
   "main": "index.js",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.3",
     "node-localstorage": "^2.2.1"
   },
