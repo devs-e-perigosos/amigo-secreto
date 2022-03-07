@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import { useLocalStorage } from '../services/local-storage/use-local-storage.js'
+import { KEYS } from '../constants/keys.js'
 
 const router = Router()
 
@@ -7,8 +8,18 @@ const localStorage = useLocalStorage()
 
 router.post('/', async (req, res, next) => {
   try {
-    const amigo = {}
-    res.send(amigo)
+    const amigo = req.body
+
+    const amigosObject = localStorage.getObject(KEYS.AMIGOS)
+    const newAmigosArray = [...amigosObject.amigos, amigo]
+    const newAmigosObject = {
+      nextId: ++amigosObject.nextId,
+      amigos: newAmigosArray,
+    }
+
+    localStorage.setObject(KEYS.AMIGOS, newAmigosObject)
+
+    res.status(201).send(amigo)
   } catch (err) {
     next(err)
   }
