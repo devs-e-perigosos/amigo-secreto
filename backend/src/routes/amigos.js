@@ -11,7 +11,8 @@ router.post('/', async (req, res, next) => {
     const amigo = req.body
 
     const amigosObject = localStorage.getObject(KEYS.AMIGOS)
-    const newAmigosArray = [...amigosObject.amigos, amigo]
+    const amigoWithId = { ...amigo, id: amigosObject.nextId }
+    const newAmigosArray = [...amigosObject.amigos, amigoWithId]
     const newAmigosObject = {
       nextId: ++amigosObject.nextId,
       amigos: newAmigosArray,
