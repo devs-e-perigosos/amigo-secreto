@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&family=Righteous&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-principal: #404058;
+    --laranja: #F25836;
+    --cinza: #E5E5E5;
+    --azul: #1C71A7;
+}
+body{
+    display: flex;
+    background-color: var(--cor-principal);
+    overflow-y: hidden;
+    overflow-x: hidden;
+    align-items: center;
+}
+
+main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.vector-right img{
+    position: absolute;
+    height: 266px;
+    margin-left: 91.3%;
+    top: 60%;
+    right: -6.3%;
+}
+
+.vector-left img{
+    position: absolute;
+    top: 22%;
+    height: 543px;
+}
+
+.titulo-principal {
+    color: var(--cinza);
+    font-family: "Righteous";
+    font-size: 70px;
+    margin-top: -7rem;
+    width: 500px;
+    align-items: center;
+}
+
+.titulo-principal span{
+    color: var(--laranja);
+}
+
+figcaption{
+    color: var(--cinza);
+    font-family: "Raleway";
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+    margin-top: -35px;
+}
+
+.img-principal{
+    align-items: center;
+    width:0 auto;
+}
+.img-principal img{
+    margin-top: 60px;
+    height: 370px;
+}
+
+.btn {
+    margin-top: 7rem;
+}
+
+#btn {
+    font-family: 'Raleway';
+    border: none;
+    border-inline: none;
+    cursor: pointer;
+    border-radius: 50px;
+    width: 280px;
+    height: 50px;
+    background-color: var(--laranja);
+    font-weight: 500;
+    font-size: 25px;
+    color: #fff;
+    box-shadow: 5px 9px 16px 0px #00000040;
+}
