@@ -1,0 +1,28 @@
+{
+  "name": "amigo-secreto",
+  "version": "1.0.0",
+  "description": "Aplicativo de sorteio do jogo Amigo Secreto",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.3",
+    "node-localstorage": "^2.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devs-e-perigosos/amigo-secreto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devs-e-perigosos/amigo-secreto/issues"
+  },
+  "homepage": "https://github.com/devs-e-perigosos/amigo-secreto#readme",
+  "type": "module"
+}
