@@ -1,0 +1,65 @@
+:root {
+    --cor-principal: #404058;
+    --laranja: #F25836;
+    --cinza: #E5E5E5;
+    --azul: #1C71A7;
+    --azul-escuro: #2A2A43;
+    --hover: #cf4a2d;
+}
+
+main {
+    height: auto;
+}
+
+.obs{
+    font-family: "Raleway";
+    color: var(--laranja);
+    display: flex;
+    margin: 60px auto -60px 20px;
+}
+
+.participantes{
+    padding: 0 20px 0;
+    border-radius: 25px;
+    width: 950px;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 75px 0 35px 0;
+    overflow:auto; 
+}
+
+.card{
+    padding: 0;
+    background: var(--azul-escuro);
+    border-radius: 25px;
+    width: 430px;
+    height: 150px;
+    margin: 0 0px 20px 0;
+}
+
+.btn {
+    margin-bottom: 0px;
+}
+
+.participantes::-webkit-scrollbar {
+    width: 25px;               /* width of the entire scrollbar */
+  }
+  
+.participantes::-webkit-scrollbar-track {
+    background: var(--cor-principal);        /* color of the tracking area */
+  }
+  
+.participantes::-webkit-scrollbar-thumb {
+    background-color: var(--laranja);    /* color of the scroll thumb */
+    border-radius: 25px;       /* roundness of the scroll thumb */
+    border: 5px solid var(--cor-principal);  /* creates padding around scroll thumb */
+  }
+
+  .participantes::-webkit-scrollbar-thumb:hover {
+    background-color: var(--hover);    /* color of the scroll thumb */
+    border-radius: 25px;       /* roundness of the scroll thumb */
+    border: 5px solid var(--cor-principal);  /* creates padding around scroll thumb */
+  }

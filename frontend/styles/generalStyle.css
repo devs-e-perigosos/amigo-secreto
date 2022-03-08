@@ -11,32 +11,32 @@
     --laranja: #F25836;
     --cinza: #E5E5E5;
     --azul: #1C71A7;
+    --azul-escuro: #2A2A43;
+    --hover: #cf4a2d;
 }
+
 body{
     display: flex;
     background-color: var(--cor-principal);
-    overflow-y: hidden;
     overflow-x: hidden;
     align-items: center;
 }
 
 main {
-    margin-left: auto;
-    margin-right: auto;
-    width: 30vw;
+    margin: 0 auto;
+    width: 950px;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .vector-right img{
     position: absolute;
     height: 266px;
-    margin-left: 91.3%;
     top: 60%;
-    right: -6.3%;
+    right: -122px;
 }
 
 .vector-left img{
@@ -49,9 +49,8 @@ main {
     color: var(--cinza);
     font-family: "Righteous";
     font-size: 70px;
-    margin-top: -7rem;
     width: 500px;
-    align-items: center;
+    margin-top: 105px;
 }
 
 .titulo-principal span{
@@ -71,13 +70,17 @@ figcaption{
     align-items: center;
     width:0 auto;
 }
+
 .img-principal img{
-    margin-top: 60px;
     height: 370px;
 }
 
 .btn {
-    margin-top: 7rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 125px;
 }
 
 #btn {
@@ -93,4 +96,8 @@ figcaption{
     font-size: 25px;
     color: #fff;
     box-shadow: 5px 9px 16px 0px #00000040;
+}
+
+#btn:hover{
+    background-color: var(--hover);
 }
