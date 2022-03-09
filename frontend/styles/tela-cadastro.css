@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&family=Righteous&display=swap");
 
-h2 {
+label {
   font-family: "Righteous";
   font-weight: 500;
   font-size: 30px;
@@ -9,7 +9,12 @@ h2 {
   margin-bottom: 5px;
 }
 
-#h2-email {
+.input-nome-email {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-email {
   margin-top: 35px;
 }
 
