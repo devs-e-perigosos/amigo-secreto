@@ -4,6 +4,8 @@ import { KEYS } from '../constants/keys.js'
 import { MESSAGES } from '../constants/messages.js'
 import { validateEmail } from '../utils/validate-email.js'
 import { isNullUndefinedOrEmpty } from '../utils/is-null-undefined-or-empty.js'
+import { isNotUniqueByField } from '../utils/is-not-unique-by-field.js'
+import { FIELDS } from '../constants/fields.js'
 
 const router = Router()
 const localStorage = useLocalStorage()
@@ -23,11 +25,21 @@ router.post('/', async (req, res, next) => {
       res.status(400).send(MESSAGES.EMAIL_INVALIDO)
     }
 
-    const amigosObject = localStorage.getObject(KEYS.AMIGOS)
-    const amigoWithId = { ...amigo, id: amigosObject.nextId }
-    const newAmigosArray = [...amigosObject.amigos, amigoWithId]
+    const { amigos, nextId } = localStorage.getObject(KEYS.AMIGOS)
+
+    console.log(amigos)
+    if (isNotUniqueByField(amigos, amigo.nome, FIELDS.NOME)) {
+      res.status(400).send(MESSAGES.JA_EXISTE_UM_AMIGO_COM_ESSE_NOME)
+    }
+
+    if (isNotUniqueByField(amigos, amigo.email, FIELDS.EMAIL)) {
+      res.status(400).send(MESSAGES.JA_EXISTE_UM_AMIGO_COM_ESSE_EMAIL)
+    }
+
+    const amigoWithId = { ...amigo, id: nextId + 1 }
+    const newAmigosArray = [...amigos, amigoWithId]
     const newAmigosObject = {
-      nextId: ++amigosObject.nextId,
+      nextId,
       amigos: newAmigosArray,
     }
 
