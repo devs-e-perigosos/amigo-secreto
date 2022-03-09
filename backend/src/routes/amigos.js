@@ -27,7 +27,6 @@ router.post('/', async (req, res, next) => {
 
     const { amigos, nextId } = localStorage.getObject(KEYS.AMIGOS)
 
-    console.log(amigos)
     if (isNotUniqueByField(amigos, amigo.nome, FIELDS.NOME)) {
       res.status(400).send(MESSAGES.JA_EXISTE_UM_AMIGO_COM_ESSE_NOME)
     }
