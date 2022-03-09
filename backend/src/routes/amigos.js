@@ -35,10 +35,10 @@ router.post('/', async (req, res, next) => {
       res.status(400).send(MESSAGES.JA_EXISTE_UM_AMIGO_COM_ESSE_EMAIL)
     }
 
-    const amigoWithId = { ...amigo, id: nextId + 1 }
+    const amigoWithId = { ...amigo, id: nextId }
     const newAmigosArray = [...amigos, amigoWithId]
     const newAmigosObject = {
-      nextId,
+      nextId: nextId + 1,
       amigos: newAmigosArray,
     }
 
