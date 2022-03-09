@@ -1,14 +1,27 @@
 import { Router } from 'express'
 import { useLocalStorage } from '../services/local-storage/use-local-storage.js'
 import { KEYS } from '../constants/keys.js'
+import { MESSAGES } from '../constants/messages.js'
+import { validateEmail } from '../utils/validate-email.js'
+import { isNullUndefinedOrEmpty } from '../utils/is-null-undefined-or-empty.js'
 
 const router = Router()
-
 const localStorage = useLocalStorage()
 
 router.post('/', async (req, res, next) => {
   try {
     const amigo = req.body
+
+    if (
+      isNullUndefinedOrEmpty(amigo.nome) ||
+      isNullUndefinedOrEmpty(amigo.email)
+    ) {
+      res.status(400).send(MESSAGES.POR_FAVOR_PREENCHA_TODOS_OS_CAMPOS)
+    }
+
+    if (validateEmail(amigo.email)) {
+      res.status(400).send(MESSAGES.EMAIL_INVALIDO)
+    }
 
     const amigosObject = localStorage.getObject(KEYS.AMIGOS)
     const amigoWithId = { ...amigo, id: amigosObject.nextId }
@@ -45,7 +58,7 @@ router.delete('/:id', async (req, res, next) => {
 
 router.get('/all', async (req, res, next) => {
   try {
-    const amigos = localStorage.getObject('amigos')
+    const amigos = localStorage.getObject(KEYS.AMIGOS)
     res.send(amigos)
   } catch (err) {
     next(err)
