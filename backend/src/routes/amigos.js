@@ -18,21 +18,21 @@ router.post('/', async (req, res, next) => {
       isNullUndefinedOrEmpty(amigo.nome) ||
       isNullUndefinedOrEmpty(amigo.email)
     ) {
-      res.status(400).send(MESSAGES.POR_FAVOR_PREENCHA_TODOS_OS_CAMPOS)
+      throw new Error(MESSAGES.POR_FAVOR_PREENCHA_TODOS_OS_CAMPOS)
     }
 
     if (validateEmail(amigo.email)) {
-      res.status(400).send(MESSAGES.EMAIL_INVALIDO)
+      throw new Error(MESSAGES.EMAIL_INVALIDO)
     }
 
     const { amigos, nextId } = localStorage.getObject(KEYS.AMIGOS)
 
     if (isNotUniqueByField(amigos, amigo.nome, FIELDS.NOME)) {
-      res.status(400).send(MESSAGES.JA_EXISTE_UM_AMIGO_COM_ESSE_NOME)
+      throw new Error(MESSAGES.JA_EXISTE_UM_AMIGO_COM_ESSE_NOME)
     }
 
     if (isNotUniqueByField(amigos, amigo.email, FIELDS.EMAIL)) {
-      res.status(400).send(MESSAGES.JA_EXISTE_UM_AMIGO_COM_ESSE_EMAIL)
+      throw new Error(MESSAGES.JA_EXISTE_UM_AMIGO_COM_ESSE_EMAIL)
     }
 
     const amigoWithId = { ...amigo, id: nextId }
