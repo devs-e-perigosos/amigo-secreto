@@ -38,6 +38,34 @@ main {
     width: 430px;
     height: 150px;
     margin: 0 0px 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.data{
+    margin: 0 18px 0 18px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+    margin: 18px 18px 0 18px;
+}
+
+.buttons img{
+    margin: 0 0 0 12px;
+    cursor: pointer;
+}
+
+.nome, .email{
+    font-size: 18px;
+    color: white;
+    font-family: "Raleway";
+}
+
+.nome{
+    font-weight: 700;
+    margin: 0 0 8px 0;
 }
 
 .btn {
