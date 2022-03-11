@@ -71,11 +71,10 @@ router.get('/all', async (req, res, next) => {
   try {
     const amigos = localStorage.getObject(KEYS.AMIGOS)
 
-    if (amigos.amigos.length > 0) {
-      res.send(amigos.amigos)
+    if (amigos.amigos.length === 0) {
+      res.status(204).send()
     } else {
-      res.status(204)
-      res.send()
+      res.send(amigos.amigos)
     }
   } catch (err) {
     next(err)
