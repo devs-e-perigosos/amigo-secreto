@@ -69,12 +69,12 @@ router.delete('/:id', async (req, res, next) => {
 
 router.get('/all', async (req, res, next) => {
   try {
-    const amigos = localStorage.getObject(KEYS.AMIGOS)
+    const { amigos, nextId } = localStorage.getObject(KEYS.AMIGOS)
 
-    if (amigos.amigos.length === 0) {
+    if (amigos.length === 0) {
       res.status(204).send()
     } else {
-      res.send(amigos.amigos)
+      res.send(amigos)
     }
   } catch (err) {
     next(err)
