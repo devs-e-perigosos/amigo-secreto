@@ -2,9 +2,12 @@ import { Router } from 'express'
 import { useLocalStorage } from '../services/local-storage/use-local-storage.js'
 import { KEYS } from '../constants/keys.js'
 import { MESSAGES } from '../constants/messages.js'
-import { validateEmail } from '../utils/validate-email.js'
-import { isNullUndefinedOrEmpty } from '../utils/is-null-undefined-or-empty.js'
-import { isNotUniqueByField } from '../utils/is-not-unique-by-field.js'
+import {
+  validateEmail,
+  isNotUniqueByField,
+  isNullUndefinedOrEmpty,
+  isSameAmigo,
+} from '../utils/index.js'
 import { FIELDS } from '../constants/fields.js'
 
 const router = Router()
@@ -44,16 +47,75 @@ router.post('/', async (req, res, next) => {
 
     localStorage.setObject(KEYS.AMIGOS, newAmigosObject)
 
-    res.status(201).send(amigo)
+    res.status(201).send(MESSAGES.AMIGO_ADICIONADO_COM_SUCESSO)
   } catch (err) {
     next(err)
   }
 })
 
-router.put('/', async (req, res, next) => {
+router.put('/:id', async (req, res, next) => {
   try {
-    const amigo = {}
-    res.send(amigo)
+    const { id } = req.params
+    const newAmigo = req.body
+
+    if (
+      isNullUndefinedOrEmpty(newAmigo.nome) ||
+      isNullUndefinedOrEmpty(newAmigo.email)
+    ) {
+      throw new Error(MESSAGES.POR_FAVOR_PREENCHA_TODOS_OS_CAMPOS)
+    }
+
+    if (validateEmail(newAmigo.email)) {
+      throw new Error(MESSAGES.EMAIL_INVALIDO)
+    }
+
+    const { amigos, nextId } = localStorage.getObject(KEYS.AMIGOS)
+
+    const oldAmigo = amigos.find(amigo => amigo.id == id)
+
+    if (isNullUndefinedOrEmpty(oldAmigo)) {
+      throw new Error(MESSAGES.NAO_EXISTE_UM_AMIGO_COM_ESSE_ID)
+    }
+
+    const hasNotSameName = !(oldAmigo.nome === newAmigo.nome)
+    const hasNotSameEmail = !(oldAmigo.email === newAmigo.email)
+
+    if (
+      hasNotSameName &&
+      isNotUniqueByField(amigos, newAmigo.nome, FIELDS.NOME)
+    ) {
+      throw new Error(MESSAGES.JA_EXISTE_UM_AMIGO_COM_ESSE_NOME)
+    }
+
+    if (
+      hasNotSameEmail &&
+      isNotUniqueByField(amigos, newAmigo.email, FIELDS.EMAIL)
+    ) {
+      throw new Error(MESSAGES.JA_EXISTE_UM_AMIGO_COM_ESSE_EMAIL)
+    }
+
+    if (isSameAmigo(hasNotSameName, hasNotSameEmail)) {
+      throw new Error(MESSAGES.ESSE_AMIGO_JA_POSSUI_ESSES_DADOS)
+    }
+
+    const newAmigos = amigos.map(amigo => {
+      if (amigo.id == id) {
+        return {
+          ...newAmigo,
+          id,
+        }
+      }
+      return amigo
+    })
+
+    const newAmigosObject = {
+      nextId,
+      amigos: newAmigos,
+    }
+
+    localStorage.setObject(KEYS.AMIGOS, newAmigosObject)
+
+    res.send(MESSAGES.AMIGO_EDITADO_COM_SUCESSO)
   } catch (err) {
     next(err)
   }
