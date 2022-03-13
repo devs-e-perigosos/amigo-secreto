@@ -9,6 +9,7 @@ import {
   isSameAmigo,
 } from '../utils/index.js'
 import { FIELDS } from '../constants/fields.js'
+import { drawAmigo } from '../utils/draw-amigo.js'
 
 const router = Router()
 const localStorage = useLocalStorage()
@@ -48,6 +49,22 @@ router.post('/', async (req, res, next) => {
     localStorage.setObject(KEYS.AMIGOS, newAmigosObject)
 
     res.status(201).send(MESSAGES.AMIGO_ADICIONADO_COM_SUCESSO)
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.put('/sorteio', async (req, res, next) => {
+  try {
+    const { amigos } = localStorage.getObject(KEYS.AMIGOS)
+
+    const sorteio = amigos.reduce(drawAmigo, [])
+
+    console.log(sorteio)
+
+    //TODO adicionar logica de envio de email
+
+    res.send(MESSAGES.SORTEIO_REALIZADO_COM_SUCESSO)
   } catch (err) {
     next(err)
   }

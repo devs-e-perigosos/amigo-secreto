@@ -7,4 +7,5 @@ export const MESSAGES = {
   NAO_EXISTE_UM_AMIGO_COM_ESSE_ID: 'Não existe um amigo com esse Id!',
   AMIGO_EDITADO_COM_SUCESSO: 'Amigo editado com sucesso!',
   ESSE_AMIGO_JA_POSSUI_ESSES_DADOS: 'Esse amigo já possui esses dados!',
+  SORTEIO_REALIZADO_COM_SUCESSO: 'Sorteio realizado com sucesso!',
 }
