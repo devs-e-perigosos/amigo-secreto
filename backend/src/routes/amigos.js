@@ -11,6 +11,8 @@ import {
 import { FIELDS } from '../constants/fields.js'
 import { drawAmigo } from '../utils/draw-amigo.js'
 
+const MINIMO_AMIGOS_SORTEIO = 3
+
 const router = Router()
 const localStorage = useLocalStorage()
 
@@ -57,6 +59,12 @@ router.post('/', async (req, res, next) => {
 router.put('/sorteio', async (req, res, next) => {
   try {
     const { amigos } = localStorage.getObject(KEYS.AMIGOS)
+
+    if (amigos.length < MINIMO_AMIGOS_SORTEIO) {
+      throw new Error(
+        MESSAGES.PRECISA_DE_PELO_MENOS_3_AMIGOS_PARA_REALIZAR_O_SORTEIO
+      )
+    }
 
     const sorteio = amigos.reduce(drawAmigo, [])
 

@@ -8,4 +8,6 @@ export const MESSAGES = {
   AMIGO_EDITADO_COM_SUCESSO: 'Amigo editado com sucesso!',
   ESSE_AMIGO_JA_POSSUI_ESSES_DADOS: 'Esse amigo já possui esses dados!',
   SORTEIO_REALIZADO_COM_SUCESSO: 'Sorteio realizado com sucesso!',
+  PRECISA_DE_PELO_MENOS_3_AMIGOS_PARA_REALIZAR_O_SORTEIO:
+    'Precisa de pelo menos 3 amigos para realizar o sorteio!',
 }
