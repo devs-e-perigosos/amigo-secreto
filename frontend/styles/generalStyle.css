@@ -22,7 +22,8 @@ body{
     align-items: center;
 }
 
-main {
+main{
+    position: relative;
     margin: 0 auto;
     width: 950px;
     height: 100vh;

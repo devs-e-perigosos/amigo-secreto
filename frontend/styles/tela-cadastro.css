@@ -9,6 +9,16 @@ label {
   margin-bottom: 5px;
 }
 
+.p-sucesso {
+  position: absolute;
+  top: 45vh;
+
+  color: var(--cinza);
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: "Raleway";
+}
+
 .input-nome-email {
   display: flex;
   flex-direction: column;
@@ -63,5 +73,40 @@ label {
 }
 
 .btn-input:hover {
+  background-color: var(--hover);
+}
+
+/* Estilizando o botaoOk criando pelo JS */
+main .container {
+  align-items: center;
+
+  position: relative;
+  margin: 0 auto;
+  width: 950px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;  
+  justify-content: space-between;
+
+}
+
+.botao-ok {
+  font-family: "Raleway";
+  border: none;
+  border-inline: none;
+  cursor: pointer;
+  border-radius: 50px;
+  width: 280px;
+  height: 50px;
+  background-color: var(--laranja);
+  font-weight: 500;
+  font-size: 25px;
+  color: #fff;
+  box-shadow: 5px 9px 16px 0px #00000040;
+
+  margin-top: 655px;
+}
+
+.botao-ok:hover {
   background-color: var(--hover);
 }
