@@ -24,7 +24,6 @@ label {
   flex-direction: column;
 }
 
-
 .label-email {
   margin-top: 35px;
 }
@@ -41,7 +40,7 @@ label {
   margin-left: -15px;
   padding: 15px;
   border-radius: 25px;
-  border: 2.5px solid #F25836; 
+  border: 2.5px solid #f25836;
   box-shadow: 0px 0px 8px var(--laranja);
 }
 
@@ -85,9 +84,8 @@ main .container {
   width: 950px;
   height: 100vh;
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   justify-content: space-between;
-
 }
 
 .botao-ok {
@@ -104,7 +102,8 @@ main .container {
   color: #fff;
   box-shadow: 5px 9px 16px 0px #00000040;
 
-  margin-top: 655px;
+  position: absolute;
+  bottom: 5vh;
 }
 
 .botao-ok:hover {
