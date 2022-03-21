@@ -148,7 +148,25 @@ router.put('/:id', async (req, res, next) => {
 
 router.delete('/:id', async (req, res, next) => {
   try {
-    res.end()
+    const { amigos, nextId } = localStorage.getObject(KEYS.AMIGOS)
+    const amigoById = amigos.find(objetos => objetos.id == req.params.id)
+
+    if (amigoById) {
+      let indexDoAmigoNoArray = amigos.indexOf(amigoById)
+      amigos.splice(indexDoAmigoNoArray, 1)
+
+      const newAmigosArray = [...amigos]
+      const newAmigosObject = {
+        nextId,
+        amigos: newAmigosArray,
+      }
+
+      localStorage.setObject(KEYS.AMIGOS, newAmigosObject)
+
+      res.status(200).send(MESSAGES.AMIGO_REMOVIDO_COM_SUCESSO)
+    } else {
+      res.status(204).send(MESSAGES.NAO_EXISTE_UM_AMIGO_COM_ESSE_ID)
+    }
   } catch (err) {
     next(err)
   }
@@ -171,12 +189,12 @@ router.get('/all', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
   try {
     const amigos = localStorage.getObject(KEYS.AMIGOS).amigos
-    const amigoById = amigos.filter(objetos => objetos.id == req.params.id)
+    const amigoById = amigos.find(objetos => objetos.id == req.params.id)
 
-    if (amigoById.length === 0) {
-      res.status(204).send()
+    if (amigoById) {
+      res.send(amigoById)
     } else {
-      res.send(amigoById[0])
+      res.status(204).send(MESSAGES.NAO_EXISTE_UM_AMIGO_COM_ESSE_ID)
     }
   } catch (err) {
     next(err)
