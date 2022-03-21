@@ -9,9 +9,17 @@ label {
   margin-bottom: 5px;
 }
 
+#sucesso {
+  display: none;
+  text-align: center;
+  margin: 0 auto;
+
+  justify-content: center;
+}
+
 .p-sucesso {
-  position: absolute;
-  top: 45vh;
+  position: relative;
+  margin: 0 auto;
 
   color: var(--cinza);
   font-size: 3rem;
@@ -79,9 +87,6 @@ label {
 main .container {
   align-items: center;
 
-  position: relative;
-  margin: 0 auto;
-  width: 950px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -104,8 +109,16 @@ main .container {
 
   position: absolute;
   bottom: 5vh;
+  margin-bottom: 80px;
 }
 
 .botao-ok:hover {
   background-color: var(--hover);
+}
+
+.erro {
+  margin-top: 15px;
+  color: var(--laranja);
+  font-family: "Raleway";
+  transition: 0.3s smooth;
 }

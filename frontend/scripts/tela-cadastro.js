@@ -1,4 +1,6 @@
 const botao = document.querySelector(".btn-input");
+const botaoOk = document.querySelector(".botao-ok");
+
 const nome = document.getElementById("nome");
 const email = document.getElementById("email");
 
@@ -22,29 +24,25 @@ async function adicionar(nome, email) {
     let erro = document.querySelector(".erro");
     erro.innerText = dados.error;
   } else {
-    let container = document.querySelector(".container");
-    container.innerHTML = "";
 
-    // criando o P de Sucesso, adicionando no MAIN e criando uma classe pra ele
-    let p = document.createElement("p");
-    let mensagemP = document.createTextNode("Cadastrado com Sucesso!");
-    p.appendChild(mensagemP);
-    container.appendChild(p);
-
-    if (p.classList) p.classList.add("p-sucesso");
-    else p.className += " p-sucesso";
-
-    // criando o BotaoOk, adicionando no MAIN e criando uma classe pra ele
-    let botaoOk = document.createElement("button");
-    let mensagemBotao = document.createTextNode("Ok");
-    botaoOk.appendChild(mensagemBotao);
-    container.appendChild(botaoOk);
-
-    if (botaoOk.classList) botaoOk.classList.add("botao-ok");
-    else botaoOk.className += " botao-ok";
+    let formulario = document.getElementById("formulario");
+    formulario.style.display = "none";
+    
+    let sucesso = document.getElementById("sucesso");
+    sucesso.style.display = "flex";
   }
+  
 }
 
 botao.addEventListener("click", (_) => {
   adicionar(nome, email);
 });
+
+function voltaToIndex() {
+  document.location.href="../pages/index.html";
+}
+
+botaoOk.addEventListener("click", (_) => {
+  voltaToIndex();
+});
+

@@ -18,33 +18,40 @@
 		</div>
 
 		<main class="container">
-			<div class="titulo-principal">Amigo <span>Secreto</span></div>
+			<div class="container" id="formulario">
+				<div class="titulo-principal">Amigo <span>Secreto</span></div>
 
-			<div class="input-nome-email">
-				<label class="label-nome">Nome</label>
-				<input
-					type="text"
-					class="input-texto"
-					name="nome"
-					id="nome"
-					placeholder="Digite seu nome..."
-				/>
-				<label class="label-email">E-mail</label>
-				<input
-					type="text"
-					class="input-texto"
-					name="email"
-					id="email"
-					placeholder="Digite seu e-mail..."
-				/>
-				<span class="erro"></span>
+				<div class="input-nome-email">
+					<label class="label-nome">Nome</label>
+					<input
+						type="text"
+						class="input-texto"
+						name="nome"
+						id="nome"
+						placeholder="Digite seu nome..."
+					/>
+					<label class="label-email">E-mail</label>
+					<input
+						type="text"
+						class="input-texto"
+						name="email"
+						id="email"
+						placeholder="Digite seu e-mail..."
+					/>
+					<span class="erro">&nbsp</span>
+				</div>
+
+				<div class="btn">
+					<button class="btn-input">Cadastrar</button>
+				</div>
 			</div>
 
-			<div class="btn">
-				<button class="btn-input">Cadastrar</button>
+			<div id="sucesso" class="container">
+				<span class="p-sucesso">Cadastrado Com Sucesso!</span>
+				<button class="botao-ok">OK</button>
 			</div>
 		</main>
 
-    <script src="../scripts/tela-cadastro.js"></script>
+		<script src="../scripts/tela-cadastro.js"></script>
 	</body>
 </html>
