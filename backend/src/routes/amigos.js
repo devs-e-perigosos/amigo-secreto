@@ -157,7 +157,7 @@ router.delete('/:id', async (req, res, next) => {
 
       const newAmigosArray = [...amigos]
       const newAmigosObject = {
-        nextId: nextId,
+        nextId,
         amigos: newAmigosArray,
       }
 
