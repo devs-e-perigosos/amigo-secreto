@@ -165,7 +165,7 @@ router.delete('/:id', async (req, res, next) => {
 
       res.status(200).send(MESSAGES.AMIGO_REMOVIDO_COM_SUCESSO)
     } else {
-      res.send(200).send(MESSAGES.NAO_EXISTE_UM_AMIGO_COM_ESSE_ID)
+      res.send(204).send(MESSAGES.NAO_EXISTE_UM_AMIGO_COM_ESSE_ID)
     }
   } catch (err) {
     next(err)
