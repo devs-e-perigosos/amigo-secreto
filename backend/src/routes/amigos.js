@@ -83,8 +83,14 @@ router.get('/all', async (req, res, next) => {
 
 router.get('/:id', async (req, res, next) => {
   try {
-    const amigo = {}
-    res.send(amigo)
+    const amigos = localStorage.getObject(KEYS.AMIGOS).amigos
+    const amigoById = amigos.filter(objetos => objetos.id == req.params.id)
+
+    if (amigoById.length === 0) {
+      res.status(204).send()
+    } else {
+      res.send(amigoById[0])
+    }
   } catch (err) {
     next(err)
   }
