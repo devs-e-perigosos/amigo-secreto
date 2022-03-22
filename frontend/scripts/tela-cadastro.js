@@ -37,7 +37,11 @@ botao.addEventListener("click", (_) => {
 });
 
 function voltaToIndex() {
+<<<<<<< HEAD
+  document.location.href = "../pages/index.html";
+=======
 	document.location.href = "../pages/index.html";
+>>>>>>> 85d64a5e1d6d7742766707e5eb3e490556b8910e
 }
 
 botaoOk.addEventListener("click", (_) => {

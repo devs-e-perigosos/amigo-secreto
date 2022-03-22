@@ -1,104 +1,147 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&family=Righteous&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&family=Righteous&display=swap");
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --cor-principal: #404058;
-    --laranja: #F25836;
-    --cinza: #E5E5E5;
-    --azul: #1C71A7;
-    --azul-escuro: #2A2A43;
-    --hover: #cf4a2d;
+  --cor-principal: #404058;
+  --laranja: #f25836;
+  --cinza: #e5e5e5;
+  --azul: #1c71a7;
+  --azul-escuro: #2a2a43;
+  --hover: #cf4a2d;
 }
 
-body{
-    display: flex;
-    background-color: var(--cor-principal);
-    overflow-x: hidden;
-    align-items: center;
+body {
+  display: flex;
+  background-color: var(--cor-principal);
+  overflow-x: hidden;
+  align-items: center;
 }
 
-main{
-    position: relative;
-    margin: 0 auto;
-    width: 950px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+main {
+  position: relative;
+  margin: 0 auto;
+  width: 950px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.vector-right img{
-    position: absolute;
-    height: 266px;
-    top: 60%;
-    right: -122px;
+.participantes {
+  display: none;
 }
 
-.vector-left img{
-    position: absolute;
-    top: 22%;
-    height: 543px;
+.lds-ring {
+  display: inline-block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 50vh;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.vector-right img {
+  position: absolute;
+  height: 266px;
+  top: 60%;
+  right: -122px;
+}
+
+.vector-left img {
+  position: absolute;
+  top: 22%;
+  height: 543px;
 }
 
 .titulo-principal {
-    color: var(--cinza);
-    font-family: "Righteous";
-    font-size: 70px;
-    width: 500px;
-    margin-top: 105px;
+  color: var(--cinza);
+  font-family: "Righteous";
+  font-size: 70px;
+  width: 500px;
+  margin-top: 105px;
 }
 
-.titulo-principal span{
-    color: var(--laranja);
+.titulo-principal span {
+  color: var(--laranja);
 }
 
-figcaption{
-    color: var(--cinza);
-    font-family: "Raleway";
-    font-weight: 500;
-    font-size: 15px;
-    text-align: center;
-    margin-top: -35px;
+figcaption {
+  color: var(--cinza);
+  font-family: "Raleway";
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+  margin-top: -35px;
 }
 
-.img-principal{
-    align-items: center;
-    width:0 auto;
+.img-principal {
+  align-items: center;
+  width: 0 auto;
+  display: none;
 }
 
-.img-principal img{
-    height: 370px;
+.img-principal img {
+  height: 370px;
 }
 
 .btn {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 125px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 125px;
+  display: none;
 }
 
 #btn {
-    font-family: 'Raleway';
-    border: none;
-    border-inline: none;
-    cursor: pointer;
-    border-radius: 50px;
-    width: 280px;
-    height: 50px;
-    background-color: var(--laranja);
-    font-weight: 500;
-    font-size: 25px;
-    color: #fff;
-    box-shadow: 5px 9px 16px 0px #00000040;
+  font-family: "Raleway";
+  border: none;
+  border-inline: none;
+  cursor: pointer;
+  border-radius: 50px;
+  width: 280px;
+  height: 50px;
+  background-color: var(--laranja);
+  font-weight: 500;
+  font-size: 25px;
+  color: #fff;
+  box-shadow: 5px 9px 16px 0px #00000040;
 }
 
-#btn:hover{
-    background-color: var(--hover);
+#btn:hover {
+  background-color: var(--hover);
 }
