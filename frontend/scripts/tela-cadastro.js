@@ -5,45 +5,41 @@ const nome = document.getElementById("nome");
 const email = document.getElementById("email");
 
 async function adicionar(nome, email) {
-	const config = {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify({
-			nome: nome.value,
-			email: email.value,
-		}),
-	};
+  const config = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      nome: nome.value,
+      email: email.value,
+    }),
+  };
 
-	const response = await fetch("http://localhost:3000/amigos", config);
+  const response = await fetch("http://localhost:3000/amigos", config);
 
-	if (response.status === 400) {
-		const dados = await response.json();
+  if (response.status === 400) {
+    const dados = await response.json();
 
-		let erro = document.querySelector(".erro");
-		erro.innerText = dados.error;
-	} else {
-		let formulario = document.getElementById("formulario");
-		formulario.style.display = "none";
+    let erro = document.querySelector(".erro");
+    erro.innerText = dados.error;
+  } else {
+    let formulario = document.getElementById("formulario");
+    formulario.style.display = "none";
 
-		let sucesso = document.getElementById("sucesso");
-		sucesso.style.display = "flex";
-	}
+    let sucesso = document.getElementById("sucesso");
+    sucesso.style.display = "flex";
+  }
 }
 
 botao.addEventListener("click", (_) => {
-	adicionar(nome, email);
+  adicionar(nome, email);
 });
 
 function voltaToIndex() {
-<<<<<<< HEAD
   document.location.href = "../pages/index.html";
-=======
-	document.location.href = "../pages/index.html";
->>>>>>> 85d64a5e1d6d7742766707e5eb3e490556b8910e
 }
 
 botaoOk.addEventListener("click", (_) => {
-	voltaToIndex();
+  voltaToIndex();
 });
