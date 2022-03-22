@@ -1,0 +1,62 @@
+h1{
+    font-family: "Raleway";
+    color: white;
+    font-size: 36px;
+    margin: 20px 0 0 0;
+}
+
+.triangulo-conteiner{
+    position: relative;
+    margin: 120px 0 0 0;
+}
+
+.triangulo{
+    
+}
+
+#int1{
+    position: absolute;
+    top: -70px;
+    left: calc(50% - 70px);
+}
+
+
+#int2{
+    border-radius: 50%;
+    width: 140px;
+    position: absolute;
+    top: calc(50% - 70px);
+    left: calc(25% - 70px);
+}
+
+#int3{
+    border-radius: 50%;
+    width: 140px;
+    position: absolute;
+    top: calc(50% - 70px);
+    right: calc(25% - 70px);
+}
+
+#int4{
+    border-radius: 50%;
+    width: 140px;
+    position: absolute;
+    bottom: -70px;
+    left:  -70px;
+}
+
+#int5{
+    border-radius: 50%;
+    width: 140px;
+    position: absolute;
+    bottom: -70px;
+    left: calc(50% - 70px);
+}
+
+#int6{
+    border-radius: 50%;
+    width: 140px;
+    position: absolute;
+    bottom: -70px;
+    right:  -70px;
+}
