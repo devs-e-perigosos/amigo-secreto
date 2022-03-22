@@ -1,45 +1,36 @@
-const botao = document.querySelector(".btn");
+const botaoCadastro = document.querySelector(".btn-cadastro");
 const img = document.querySelector(".img-principal");
 const participantes = document.querySelector(".participantes");
 const obs = document.querySelector(".obs");
+const botaoSorteio = document.querySelector("#btn-sorteio");
+const botoes = document.querySelector(".btns");
 let dados;
 async function obterAmigos() {
   const response = await fetch("http://localhost:3000/amigos/all");
   const loader = document.querySelector(".lds-ring");
   loader.style.display = "none";
   if (response.status === 204) {
-    //logica  mudar tela
     img.style.display = "block";
-    botao.style.display = "flex";
+    botaoCadastro.style.display = "flex";
   } else if (response.status === 200) {
-    //logica ter amigos
     dados = await response.json();
     obs.style.display = "flex";
-    console.log(dados);
-    atualizarAmigos(dados);
-    //if (dados.length < 3) {
-    //  const id = "judfj";
-    //}
+    dados.forEach(({ nome, email, id }) => {
+      criarCard(nome, email, id);
+    });
+    botoes.style.display = "flex";
+    botaoCadastro.style.display = "none";
+    if (dados.length < 3) {
+      botaoSorteio.style.display = "none";
+    } else {
+      botaoSorteio.style.display = "inline-block";
+    }
   }
+  //if (dados.length < 3) {
+  //  const id = "judfj";
+  //}
 }
 
-function atualizarAmigos(dados) {
-  participantes.innerHTML = "";
-  dados.forEach(({ nome, email, id }) => {
-    criarCard(nome, email, id);
-  });
-}
-
-/*          <div class="card">
-                <span class="buttons">
-                    <img src="/frontend/img/editButton.svg">
-                    <img src="/frontend/img/deleteButton.svg">
-                </span>
-                <span class="data">
-                    <p class="nome" id="nome">Lyzzandro Dualamo Soares Teodosio</p>
-                    <p class="email" id="email">lyzzandro91@gmail.com</p>
-                </span>
-            </div>*/
 function criarCard(nome, email, id) {
   const card = document.createElement("div");
   const buttons = document.createElement("span");
@@ -100,12 +91,30 @@ function confirmarDelete(nome, id) {
       method: "DELETE",
     };
 
-    const response = await fetch(`http://localhost:3000/amigos/${id}`, config);
-    dados.filter((dado) => {
-      dado.id !== id;
-    });
+    await fetch(`http://localhost:3000/amigos/${id}`, config);
 
-    atualizarAmigos(dados);
+    dados = dados.filter((dado) => {
+      return dado.id != id;
+    });
+    participantes.innerHTML = "";
+
+    if (dados.length === 0) {
+      obs.style.display = "none";
+      participantes.style.display = "none";
+      img.style.display = "block";
+      botaoCadastro.style.display = "flex";
+    } else {
+      dados.forEach(({ nome, email, id }) => {
+        criarCard(nome, email, id);
+      });
+      botoes.style.display = "flex";
+      botaoCadastro.style.display = "none";
+      if (dados.length < 3) {
+        botaoSorteio.style.display = "none";
+      } else {
+        botaoSorteio.style.display = "inline-block";
+      }
+    }
 
     frases.style.display = "none";
     buttons.style.display = "none";
