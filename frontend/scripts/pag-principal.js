@@ -26,9 +26,6 @@ async function obterAmigos() {
       botaoSorteio.style.display = "inline-block";
     }
   }
-  //if (dados.length < 3) {
-  //  const id = "judfj";
-  //}
 }
 
 function criarCard(nome, email, id) {
@@ -101,6 +98,7 @@ function confirmarDelete(nome, id) {
     if (dados.length === 0) {
       obs.style.display = "none";
       participantes.style.display = "none";
+      botoes.style.display = "none";
       img.style.display = "block";
       botaoCadastro.style.display = "flex";
     } else {
