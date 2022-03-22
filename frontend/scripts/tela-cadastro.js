@@ -17,21 +17,18 @@ async function adicionar(nome, email) {
   };
 
   const response = await fetch("http://localhost:3000/amigos", config);
-
   if (response.status === 400) {
     const dados = await response.json();
 
     let erro = document.querySelector(".erro");
     erro.innerText = dados.error;
   } else {
-
     let formulario = document.getElementById("formulario");
     formulario.style.display = "none";
-    
+
     let sucesso = document.getElementById("sucesso");
     sucesso.style.display = "flex";
   }
-  
 }
 
 botao.addEventListener("click", (_) => {
@@ -39,10 +36,9 @@ botao.addEventListener("click", (_) => {
 });
 
 function voltaToIndex() {
-  document.location.href="../pages/index.html";
+  document.location.href = "../pages/index.html";
 }
 
 botaoOk.addEventListener("click", (_) => {
   voltaToIndex();
 });
-

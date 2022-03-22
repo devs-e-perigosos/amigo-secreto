@@ -1,93 +1,94 @@
 :root {
-    --cor-principal: #404058;
-    --laranja: #F25836;
-    --cinza: #E5E5E5;
-    --azul: #1C71A7;
-    --azul-escuro: #2A2A43;
-    --hover: #cf4a2d;
+  --cor-principal: #404058;
+  --laranja: #f25836;
+  --cinza: #e5e5e5;
+  --azul: #1c71a7;
+  --azul-escuro: #2a2a43;
+  --hover: #cf4a2d;
 }
 
 main {
-    height: auto;
+  height: auto;
 }
 
-.obs{
-    font-family: "Raleway";
-    color: var(--laranja);
-    display: flex;
-    margin: 60px auto -60px 20px;
+.obs {
+  font-family: "Raleway";
+  color: var(--laranja);
+  margin: 60px auto -60px 20px;
+  display: none;
 }
 
-.participantes{
-    padding: 0 20px 0;
-    border-radius: 25px;
-    width: 950px;
-    height: 500px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 75px 0 35px 0;
-    overflow:auto; 
+.participantes {
+  padding: 0 20px 0;
+  border-radius: 25px;
+  width: 950px;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 75px 0 35px 0;
+  overflow: auto;
 }
 
-.card{
-    padding: 0;
-    background: var(--azul-escuro);
-    border-radius: 25px;
-    width: 430px;
-    height: 150px;
-    margin: 0 0px 20px 0;
-    display: flex;
-    flex-direction: column;
+.card {
+  padding: 0;
+  background: var(--azul-escuro);
+  border-radius: 25px;
+  width: 430px;
+  height: 150px;
+  margin: 0 0px 20px 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.data{
-    margin: 0 18px 0 18px;
+.data {
+  margin: 0 18px 0 18px;
 }
 
-.buttons{
-    display: flex;
-    justify-content: flex-end;
-    margin: 18px 18px 0 18px;
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin: 18px 18px 0 18px;
 }
 
-.buttons img{
-    margin: 0 0 0 12px;
-    cursor: pointer;
+.buttons img {
+  margin: 0 0 0 12px;
+  cursor: pointer;
 }
 
-.nome, .email{
-    font-size: 18px;
-    color: white;
-    font-family: "Raleway";
+.nome,
+.email {
+  font-size: 18px;
+  color: white;
+  font-family: "Raleway";
 }
 
-.nome{
-    font-weight: 700;
-    margin: 0 0 8px 0;
+.nome {
+  font-weight: 700;
+  margin: 0 0 8px 0;
 }
 
 .btn {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .participantes::-webkit-scrollbar {
-    width: 25px;               /* width of the entire scrollbar */
-  }
-  
-.participantes::-webkit-scrollbar-track {
-    background: var(--cor-principal);        /* color of the tracking area */
-  }
-  
-.participantes::-webkit-scrollbar-thumb {
-    background-color: var(--laranja);    /* color of the scroll thumb */
-    border-radius: 25px;       /* roundness of the scroll thumb */
-    border: 5px solid var(--cor-principal);  /* creates padding around scroll thumb */
-  }
+  width: 25px; /* width of the entire scrollbar */
+}
 
-  .participantes::-webkit-scrollbar-thumb:hover {
-    background-color: var(--hover);    /* color of the scroll thumb */
-    border-radius: 25px;       /* roundness of the scroll thumb */
-    border: 5px solid var(--cor-principal);  /* creates padding around scroll thumb */
-  }
+.participantes::-webkit-scrollbar-track {
+  background: var(--cor-principal); /* color of the tracking area */
+}
+
+.participantes::-webkit-scrollbar-thumb {
+  background-color: var(--laranja); /* color of the scroll thumb */
+  border-radius: 25px; /* roundness of the scroll thumb */
+  border: 5px solid var(--cor-principal); /* creates padding around scroll thumb */
+}
+
+.participantes::-webkit-scrollbar-thumb:hover {
+  background-color: var(--hover); /* color of the scroll thumb */
+  border-radius: 25px; /* roundness of the scroll thumb */
+  border: 5px solid var(--cor-principal); /* creates padding around scroll thumb */
+}
