@@ -1,49 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/generalStyle.css" />
-    <link rel="stylesheet" href="../styles/tela-cadastro.css">
-    <link rel="icon" href="../img/vectorMask.png" />
-    <title>Amigo Secreto - Edição de Cadastro</title>      
-  </head>
-  <body>
-    <div class="vector-right">
-      <img src="../img/vectorMask.png" />
-    </div>
-    <div class="vector-left">
-      <img src="../img/VectormascaraLeft.png" />
-    </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../styles/generalStyle.css" />
+		<link rel="stylesheet" href="../styles/tela-cadastro.css" />
+		<link rel="icon" href="../img/vectorMask.png" />
+		<title>Amigo Secreto - Cadastramento</title>
+	</head>
+	<body>
+		<div class="vector-right">
+			<img src="../img/vectorMask.png" />
+		</div>
+		<div class="vector-left">
+			<img src="../img/VectormascaraLeft.png" />
+		</div>
 
-    <main class="container">
-      <div class="titulo-principal">Amigo <span>Secreto</span></div>
+		<main class="container">
+			<div class="container" id="formulario">
+				<div class="titulo-principal">Amigo <span>Secreto</span></div>
 
-      <div class="input-nome-email">
-        <label class="label-nome">Nome</label>
-        <input
-          type="text"
-          class="input-texto"
-          name="nome"
-          id="nome"
-          placeholder="Digite seu nome..."
-        />
-        <label class="label-email">E-mail</label>
-        <input
-          type="text"
-          class="input-texto"
-          name="email"
-          id="email"
-          placeholder="Digite seu e-mail..."
-        />
-      </div>
+				<div class="input-nome-email">
+					<label class="label-nome">Nome</label>
+					<input
+						type="text"
+						class="input-texto"
+						name="nome"
+						id="nome"
+						placeholder="Digite seu nome..."
+					/>
+					<label class="label-email">E-mail</label>
+					<input
+						type="text"
+						class="input-texto"
+						name="email"
+						id="email"
+						placeholder="Digite seu e-mail..."
+					/>
+					<span class="erro">&nbsp</span>
+				</div>
 
-      <div class="btn">
-        <button
-          class="btn-input"
-        >Salvar</button>
-      </div>
-    </main>
-  </body>
+				<div class="btn">
+					<button id="btn-salvar" class="btn-input">Salvar</button>
+				</div>
+			</div>
+
+			<div id="sucesso" class="container">
+				<span class="p-sucesso">Salvo Com Sucesso!</span>
+				<button class="botao-ok">OK</button>
+			</div>
+		</main>
+
+		<script src="../scripts/tela-edicao-cadastro.js"></script>
+	</body>
 </html>
