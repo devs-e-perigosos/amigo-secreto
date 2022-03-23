@@ -1,0 +1,97 @@
+h1{
+    font-family: "Raleway";
+    color: white;
+    font-size: 36px;
+    margin: 20px 0 0 0;
+}
+
+.triangulo-conteiner{
+    position: relative;
+    margin: 120px 0 0 0;
+}
+
+.integrantes{
+    width: 140px;
+    border-radius: 50%;
+}
+
+#int1{
+    position: absolute;
+    top: -70px;
+    left: calc(50% - 70px);
+}
+
+#int2{
+    position: absolute;
+    top: calc(50% - 70px);
+    left: calc(25% - 70px);
+}
+
+#int3{
+    position: absolute;
+    top: calc(50% - 70px);
+    right: calc(25% - 70px);
+}
+
+#int4{
+    position: absolute;
+    bottom: -70px;
+    left:  -70px;
+}
+
+#int5{
+    position: absolute;
+    bottom: -70px;
+    left: calc(50% - 70px);
+}
+
+#int6{
+    position: absolute;
+    bottom: -70px;
+    right:  -70px;
+}
+
+.overlay {
+    position: absolute;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(64, 64, 88, 0.69);
+    opacity: 0.7;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden-name  a {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#int2:hover .overlay {
+    visibility: visible;
+}
+
+#int3:hover .overlay {
+    visibility: visible;
+}
+
+#int4:hover .overlay {
+    visibility: visible;
+}
+
+#int5:hover .overlay {
+    visibility: visible;
+}
+
+#int6:hover .overlay {
+    visibility: visible;
+}
