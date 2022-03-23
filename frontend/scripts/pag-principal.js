@@ -141,4 +141,17 @@ function confirmarDelete(nome, id) {
   body.appendChild(buttons);
 }
 
+function adicionarListenerBotaoSorteio() {
+  const config = {
+    method: "PUT",
+  };
+
+  botaoSorteio.addEventListener("click", async (_) => {
+    //Mudar para tela de loading
+    await fetch("http://localhost:3000/amigos/sorteio", config);
+    //Mudar tela para "Sorteio realizado com sucesso!"
+  });
+}
+
 obterAmigos();
+adicionarListenerBotaoSorteio();

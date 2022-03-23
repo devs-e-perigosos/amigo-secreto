@@ -145,3 +145,7 @@ figcaption {
 .btn:hover {
   background-color: var(--hover);
 }
+
+.btn-cadastro {
+  display: none;
+}
