@@ -11,6 +11,19 @@ import {
 import { FIELDS } from '../constants/fields.js'
 import { drawAmigo } from '../utils/draw-amigo.js'
 
+import nodemailer from 'nodemailer'
+
+let transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'devseperigosos@gmail.com',
+    pass: 'e@Ya#6TDM6XJ$6Yn',
+  },
+  tls: {
+    rejectUnauthorized: false,
+  },
+})
+
 const MINIMO_AMIGOS_SORTEIO = 3
 
 const router = Router()
@@ -58,7 +71,7 @@ router.post('/', async (req, res, next) => {
 
 router.put('/sorteio', async (req, res, next) => {
   try {
-    const { amigos } = localStorage.getObject(KEYS.AMIGOS)
+    const { nextId, amigos } = localStorage.getObject(KEYS.AMIGOS)
 
     if (amigos.length < MINIMO_AMIGOS_SORTEIO) {
       throw new Error(
@@ -68,9 +81,30 @@ router.put('/sorteio', async (req, res, next) => {
 
     const sorteio = amigos.reduce(drawAmigo, [])
 
-    console.log(sorteio)
+    for (let i = 0; i < sorteio.length; i++) {
+      let mailOptions = {
+        from: 'devseperigosos@gmail.com',
+        to: amigos[i].email,
+        subject: 'Seu amigo secreto!',
+        text: `Shhhhhh!, seu amigo secreto é: ${
+          amigos[sorteio[i]].nome
+        }, que possui o email: ${amigos[sorteio[i]].email}`,
+      }
+      transporter.sendMail(mailOptions, function (err, success) {
+        if (err) {
+          console.log(err)
+        } else {
+          console.log('Email enviado com sucesso')
+        }
+      })
+    }
 
-    //TODO adicionar logica de envio de email
+    const newAmigosObject = {
+      nextId,
+      amigos: [],
+    }
+
+    localStorage.setObject(KEYS.AMIGOS, newAmigosObject)
 
     res.send(MESSAGES.SORTEIO_REALIZADO_COM_SUCESSO)
   } catch (err) {
