@@ -53,9 +53,11 @@ Após esses passos, para executar o Front-End, o usuário deverá abrir o arquiv
 ### Para obter ajuda em relação a qualquer dúvida no uso do Node JS e Express, acesse:
 
 Guia de uso NodeJs: https://nodejs.org/en/docs/guides/
+
 Documentação e versões do NodeJs: https://nodejs.org/en/docs/
 
 Guia de uso Express (Começando pelo Tópico de Roteamento): https://expressjs.com/pt-br/guide/routing.html
+
 Referência da API: https://expressjs.com/pt-br/4x/api.html
 
 &nbsp;
