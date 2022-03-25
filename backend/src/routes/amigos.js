@@ -84,7 +84,9 @@ router.put('/sorteio', async (req, res, next) => {
 
     localStorage.setObject(KEYS.AMIGOS, newAmigosObject)
 
-    res.send(MESSAGES.SORTEIO_REALIZADO_COM_SUCESSO)
+    setInterval(() => {
+      res.end(MESSAGES.SORTEIO_REALIZADO_COM_SUCESSO)
+    }, 3000)
   } catch (err) {
     next(err)
   }
