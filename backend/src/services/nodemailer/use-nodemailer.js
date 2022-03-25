@@ -18,14 +18,18 @@ const transporter = nodemailer.createTransport({
   },
 })
 
-export function sendMail(emailReceiver, drawnName, drawnEmail) {
+export async function sendMail(emailReceiver, drawnName, drawnEmail) {
   const mailOptions = {
     from: USER,
     to: emailReceiver,
     subject: SUBJECT,
     text: createMessage(drawnName, drawnEmail),
   }
-  transporter.sendMail(mailOptions)
+  try {
+    await transporter.sendMail(mailOptions)
+  } catch (err) {
+    console.log(err)
+  }
 }
 
 function createMessage(drawnName, drawnEmail) {

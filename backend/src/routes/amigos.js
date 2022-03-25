@@ -77,8 +77,6 @@ router.put('/sorteio', async (req, res, next) => {
       sendMail(emailReceiver, drawnName, drawnEmail)
     })
 
-    for (let i = 0; i < sorteio.length; i++) {}
-
     const newAmigosObject = {
       nextId,
       amigos: [],
