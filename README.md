@@ -1,11 +1,19 @@
-# Amigo Secreto
+<h1 align="center">Amigo Secreto</h1>
 
-[![Logo dos Devs e Perigosos](https://avatars.githubusercontent.com/u/100775751?s=400&u=df8a90a6402ef47e9cb6cca1a7d4a6789fc4a657&v=4)](https://github.com/devs-e-perigosos)
-
-Aplicação de Sorteio do Jogo **Amigo Secreto**
+<div align="center">
+ <a href="https://github.com/devs-e-perigosos" display="block">
+  <img src="https://avatars.githubusercontent.com/u/100775751?s=400&u=df8a90a6402ef47e9cb6cca1a7d4a6789fc4a657&v=4" alt="Logo Amigo Secreto" style= "width: 200px; height: 200px"/>
+ </a>
+</div>
+ 
+<div align="center">
+ <p>Aplicação de Sorteio do Jogo <strong>Amigo Secreto</strong></p>
+</div>
 
 &nbsp;
 
+<div align="justify">
+ 
 ## O que é o projeto Amigo Secreto e qual é o seu objetivo?
 
 O projeto **Amigo Secreto** é uma aplicação criada pela organização **Devs e Periogosos** composta por Lyzzandro Dualamo, João Alfredo Alves, Alysson Aldrin, Ives Furtado Gonçalves Moreira e Jônathas Batista Silva, com o objetivo de por em prática as funcionalidades e integrações do **JavaScript** com o **HTML** e **CSS** ( Através do _NodeJS/Express_) ao desenvolver uma Aplicação Web, satisfazendo o projeto final da disciplina de **Linguagens de Script para a Web**, ministrada pelo professor Diogo Dantas Moreira, no curso de Análise e Desenvolvimento de Sistemas, no IFPB - Campus Cajazeiras.
@@ -67,3 +75,4 @@ Referência da API: https://expressjs.com/pt-br/4x/api.html
 |                                                        Lyzzandro Dualamo Soares Teodosio                                                        |                                                              João Alfredo Alves Marinho Neto                                                              |                                                            Jônathas Batista Silva                                                             |                                                          Alysson Aldrin Barreto Bezerra                                                          |                                                         Ives Furtado Gonçalves Moreira                                                          |
 | :---------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------: |
 | [![Foto do Integrante Lyzzandro](https://avatars.githubusercontent.com/u/59299120?v=4)](https://github.com/lyzzandro) _Desenvolvedor Front-End_ | [![Foto do Integrante João Alfredo](https://avatars.githubusercontent.com/u/68473607?v=4)](https://github.com/JoaoAlfredoAlves) _Desenvolvedor Front-End_ | [![Foto do Integrante Jônathas](https://avatars.githubusercontent.com/u/91159124?v=4)](https://github.com/jwnathas) _Desenvolvedor Front-End_ | [![Foto do Integrante Alysson](https://avatars.githubusercontent.com/u/14878862?v=4)](https://github.com/alyssonaldrin) _Desenvolvedor Back-End_ | [![Foto do Integrante Ives Furtado](https://avatars.githubusercontent.com/u/62016873?v=4)](https://github.com/ivesfg1) _Desenvolvedor Back-End_ |
+ </div>
