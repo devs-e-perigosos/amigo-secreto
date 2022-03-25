@@ -1,70 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../styles/generalStyle.css" />
-		<link rel="icon" href="../img/vectorMask.png" />
-		<link rel="stylesheet" href="../styles/cards.css" />
-		<link rel="stylesheet" href="../styles/removeFriend.css" />
-		<title>Amigo Secreto</title>
-	</head>
 
-	<body>
-		<div class="vector-right">
-			<a href="../pages/integrantes.html">
-				<img src="../img/vectorMask.png" />
-			</a>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="../styles/generalStyle.css" />
+	<link rel="icon" href="../img/vectorMask.png" />
+	<link rel="stylesheet" href="../styles/cards.css" />
+	<link rel="stylesheet" href="../styles/removeFriend.css" />
+	<title>Amigo Secreto</title>
+</head>
+
+<body>
+	<div class="vector-right">
+		<a href="../pages/integrantes.html">
+			<img src="../img/vectorMask.png" />
+		</a>
+	</div>
+	<div class="vector-left">
+		<img src="../img/VectormascaraLeft.png" />
+	</div>
+	<main class="container">
+		<div class="titulo-principal">Amigo <span>Secreto</span></div>
+		<div class="img-principal">
+			<img src="../img/undraw_to_the_moon_v1mv 1 1.png" />
+			<figcaption>Nenhum participante adicionado.</figcaption>
 		</div>
-		<div class="vector-left">
-			<img src="../img/VectormascaraLeft.png" />
+		<div class="btn-cadastro">
+			<a href="tela-cadastro.html"><input type="button" name="button" class="btn" value="Adicionar" /></a>
 		</div>
-		<main class="container">
-			<div class="titulo-principal">Amigo <span>Secreto</span></div>
-			<div class="img-principal">
-				<img src="../img/undraw_to_the_moon_v1mv 1 1.png" />
-				<figcaption>Nenhum participante adicionado.</figcaption>
-			</div>
-			<div class="btn-cadastro">
-				<a href="tela-cadastro.html"
-					><input
-						type="button"
-						name="button"
-						class="btn"
-						value="Adicionar"
-				/></a>
-			</div>
-			<div class="lds-ring">
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-			</div>
-			<div class="obs">
-				<p>
-					OBS: o amigo secreto só pode ocorrer com no mínimo 3
-					pessoas.
-				</p>
-			</div>
-			<div class="participantes"></div>
-			<div class="btns">
-				<a href="tela-cadastro.html"
-					><input
-						type="button"
-						name="button"
-						class="btn"
-						value="Adicionar"
-				/></a>
-				<input
-					type="button"
-					name="button"
-					class="btn"
-					id="btn-sorteio"
-					value="Sortear"
-				/>
-			</div>
-		</main>
-		<script src="../scripts/pag-principal.js"></script>
-	</body>
+		<div class="lds-ring">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div class="obs">
+			<p>
+				OBS: o amigo secreto só pode ocorrer com no mínimo 3
+				pessoas.
+			</p>
+		</div>
+		<div class="participantes"></div>
+		<div class="btns">
+			<a href="tela-cadastro.html"><input type="button" name="button" class="btn" value="Adicionar" /></a>
+			<input type="button" name="button" class="btn" id="btn-sorteio" value="Sortear" />
+		</div>
+		<div id="sucesso" class="container">
+			<span class="p-sucesso">Sorteio realizado com sucesso!</span>
+			<button class="botao-ok">OK</button>
+		</div>
+	</main>
+	<script src="../scripts/pag-principal.js"></script>
+</body>
+
 </html>

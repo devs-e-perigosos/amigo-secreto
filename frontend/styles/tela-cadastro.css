@@ -5,7 +5,6 @@ label {
   font-weight: 500;
   font-size: 24px;
   color: var(--cinza);
-
   margin-bottom: 5px;
 }
 
@@ -13,14 +12,13 @@ label {
   display: none;
   text-align: center;
   margin: 0 auto;
-
   justify-content: center;
 }
 
 .p-sucesso {
-  position: relative;
+  position: fixed;
+  top: 45vh;
   margin: 0 auto;
-
   color: var(--cinza);
   font-size: 3rem;
   font-weight: bold;
@@ -62,6 +60,7 @@ label {
 .btn {
   display: flex;
   justify-content: space-evenly;
+  
 }
 
 .btn-input {
@@ -86,11 +85,11 @@ label {
 /* Estilizando o botaoOk criando pelo JS */
 main .container {
   align-items: center;
-
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 10vh;
 }
 
 .botao-ok {
@@ -106,10 +105,8 @@ main .container {
   font-size: 25px;
   color: #fff;
   box-shadow: 5px 9px 16px 0px #00000040;
-
-  position: absolute;
-  bottom: 5vh;
-  margin-bottom: 80px;
+  position: fixed;
+  bottom: 10vh;
 }
 
 .botao-ok:hover {

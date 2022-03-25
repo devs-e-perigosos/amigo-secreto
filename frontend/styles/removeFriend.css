@@ -1,39 +1,38 @@
 .pag-remove {
-	display: flex !important;
-	flex-direction: column !important;
-	align-items: center !important;
-	justify-content: space-evenly !important;
-	margin: 0 auto !important;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	margin: 0 auto;
 	height: 100vh;
 }
 
 .frases {
-	display: flex;
+	position: fixed;
 	flex-direction: column;
 	font-family: "Raleway";
 	font-weight: 600;
 	font-size: 2.5rem;
-
 	color: #e5e5e5;
-
 	align-items: center;
 	justify-content: center;
-	margin-top: 10rem;
+	text-align: center;
+	top: 45vh;
 }
+
 .mensagem-exclusao-pessoa {
 	color: #f25836;
 }
 
 .buttonsSimNao {
 	display: flex;
-	flex-direction: row;
-	gap: 2rem;
+	position: fixed;
+	bottom: 10vh;
 }
 
 .button-sim {
 	color: #e5e5e5;
 	background-color: #f25836;
-
 	font-family: "Raleway";
 	border: none;
 	border-inline: none;
@@ -41,18 +40,16 @@
 	border-radius: 50px;
 	width: 280px;
 	height: 50px;
-
 	font-weight: 500;
 	font-size: 25px;
 	box-shadow: 5px 9px 16px 0px #00000040;
-
 	bottom: 5vh;
+	margin-right: 50px;
 	margin-top: 10rem;
 }
 .button-cancelar {
 	color: #f25836;
 	background-color: #e5e5e5;
-
 	font-family: "Raleway";
 	border: none;
 	border-inline: none;
@@ -60,11 +57,9 @@
 	border-radius: 50px;
 	width: 280px;
 	height: 50px;
-
 	font-weight: 500;
 	font-size: 25px;
 	box-shadow: 5px 9px 16px 0px #00000040;
-
 	bottom: 5vh;
 	margin-top: 10rem;
 }
