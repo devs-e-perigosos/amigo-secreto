@@ -12,4 +12,4 @@ npm start ou yarn start
 
 ## Execução do frontend
 
-Para executar o frontend, entre na pasta **frontend/pages** e exectute o arquivo index.html.
+Para executar o frontend, entre na pasta **frontend/pages** e execute o arquivo index.html.
